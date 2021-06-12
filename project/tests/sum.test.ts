@@ -1,5 +1,5 @@
 describe('sum', () => {
     it('should sum', () => {
-        expect(true).toBe(true);
+        expect(true).toBe(false);
     });
 });
