@@ -4,4 +4,7 @@ describe('sum', () => {
     it('should sum', () => {
         expect(sum(1, 2)).toBe(3);
     });
+    it('', () => {
+        expect(true).toBe(false);
+    });
 });
