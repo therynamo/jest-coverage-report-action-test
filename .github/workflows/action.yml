@@ -9,7 +9,10 @@ jobs:
         env:
             CI_JOB_NUMBER: 1
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                node-version: '14'
             - uses: artiomtr/jest-coverage-report-action@v2.0-rc.6
               with:
                   github-token: ${{ github.token }}
