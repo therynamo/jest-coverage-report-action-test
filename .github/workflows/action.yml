@@ -1,17 +1,16 @@
-name: 'coverage'
+name: "coverage"
 on:
-    pull_request:
-        branches:
-            - master
+  pull_request:
+    branches:
+      - master
 jobs:
-    coverage:
-        runs-on: ubuntu-latest
-        env:
-            CI_JOB_NUMBER: 1
-        steps:
-            - uses: actions/checkout@v1
-            - uses: artiomtr/jest-coverage-report-action@Use-json-reporter
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  working_directory: project
-                  threshold: 80
+  coverage:
+    runs-on: ubuntu-latest
+    env:
+      CI_JOB_NUMBER: 1
+    steps:
+      - uses: actions/checkout@v1
+      - uses: artiomtr/jest-coverage-report-action@Use-jest-config-instead-of-threshold-option
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: project
