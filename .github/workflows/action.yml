@@ -10,9 +10,10 @@ jobs:
       CI_JOB_NUMBER: 1
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/github-script@v5
         with:
-          node-version: "14"
+          script: |
+            console.log(process.env);
       - uses: artiomtr/jest-coverage-report-action@Cache-base-run-reports
         with:
           github-token: ${{ github.token }}
