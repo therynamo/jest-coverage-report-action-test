@@ -18,5 +18,3 @@ jobs:
         with:
           github-token: ${{ github.token }}
           working-directory: project
-        env:
-          ACTIONS_CACHE_URL: ${{ env.ACTIONS_CACHE_URL }}
