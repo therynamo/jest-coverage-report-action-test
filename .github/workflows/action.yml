@@ -14,7 +14,7 @@ jobs:
               with:
                   script: |
                       console.log(process.env);
-            - uses: artiomtr/jest-coverage-report-action@Switch-back-to-the-base-branch-after-collecting-coverage
+            - uses: artiomtr/jest-coverage-report-action@main
               with:
                   github-token: ${{ github.token }}
                   working-directory: project
