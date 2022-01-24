@@ -1,22 +1,22 @@
 name: "coverage"
 on:
-  pull_request:
-    branches:
-      - master
+    pull_request:
+        branches:
+            - master
 jobs:
-  coverage:
-    runs-on: ubuntu-latest
-    env:
-      CI_JOB_NUMBER: 1
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/github-script@v5
-        with:
-          script: |
-            console.log(process.env);
-      - uses: artiomtr/jest-coverage-report-action@Cache-base-run-reports
-        with:
-          github-token: ${{ github.token }}
-          working-directory: project
+    coverage:
+        runs-on: ubuntu-latest
         env:
-          ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
+            CI_JOB_NUMBER: 1
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/github-script@v5
+              with:
+                  script: |
+                      console.log(process.env);
+            - uses: artiomtr/jest-coverage-report-action@Switch-back-to-the-base-branch-after-collecting-coverage
+              with:
+                  github-token: ${{ github.token }}
+                  working-directory: project
+            - name: Branch name
+              run: git branch
