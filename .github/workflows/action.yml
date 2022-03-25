@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - uses: artiomtr/jest-coverage-report-action@Use-jest-config-instead-of-threshold-option
+      - uses: artiomtr/jest-coverage-report-action@test-report-threshold-failures
         with:
           github-token: ${{ github.token }}
           working-directory: project
