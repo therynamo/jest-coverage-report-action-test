@@ -1,4 +1,6 @@
-name: "coverage"
+---
+name: Testaroni
+
 on:
   pull_request:
     branches:
@@ -12,8 +14,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
-      - uses: artiomtr/jest-coverage-report-action@test-report-threshold-failures
+          node-version: "16"
+      - uses: therynamo/jest-coverage-report-action@report-threshold-failures
+        name: Test the stuffs
         with:
           github-token: ${{ github.token }}
           working-directory: project
